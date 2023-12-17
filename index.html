@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('../image/pet.jpeg');
+            background-image: url('pet.jpg');
             background-size: cover;
             background-position: center;
             color: #D35400;
@@ -63,36 +63,31 @@
 
 <body >
 
-<header>
+    <header>
+        <h1>Welcome to Quentinia Veterinary Appointment Scheduling</h1>
+        <nav>
+            <a href="#" onclick="navigateTo('/login')">Login</a>
+            <a href="#" onclick="navigateTo('/register')">Register</a>
+            <a href="#" onclick="navigateTo('/dashboard')">Dashboard</a>
+        </nav>
+    </header>
 
-    <h1>Welcome to Quentinia Veterinary Appointment Scheduling</h1>
+    <main>
+        <form th:action="@{/login}" method="post">
+            <h2>Book Your Pet's Next Appointment</h2>
+            <p>Our Veterinary Appointment Scheduling platform simplifies scheduling veterinary appointments for your pet's health. With a user-friendly interface, you can choose a knowledgeable veterinarian and provide essential details about your pet. Our service offers convenience, personalized care, ease of use, and timely reminders, making it a hassle-free way to manage your pet's healthcare.</p>
+        </form>
+    </main>
 
-    <nav>
+    <footer>
+        <p>&copy; 2023 NZE ENY Quentinia Veterinary Appointment Scheduling</p>
+    </footer>
 
-        <a th:href="@{/login}">Login</a>
-
-        <a th:href="@{/register}">Register</a>
-        <a th:href="@{/dashboard}">Dashboard</a>
-
-    </nav>
-
-</header>
-
-<main>
-
-    <form th:action="@{/login}" method="post">
-        <h2>Book Your Pet's Next Appointment</h2>
-
-        <p>Our Veterinary Appointment Scheduling platform simplifies scheduling veterinary appointments for your pet's health. With a user-friendly interface, you can choose a knowledgeable veterinarian and provide essential details about your pet. Our service offers convenience, personalized care, ease of use, and timely reminders, making it a hassle-free way to manage your pet's healthcare.</p>
-    </form>
-
-</main>
-
-<footer>
-
-    <p>&copy; 2023 NZE ENY Quentinia Veterinary Appointment Scheduling</p>
-
-</footer>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + ".html";
+        }
+    </script>
 
 </body>
 
